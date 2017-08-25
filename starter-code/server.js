@@ -1,5 +1,17 @@
 'use strict';
+/////make you declare all your functions and variables; by default in js you don't need to create var to declare things but it would become a global var
 
+//////const can only be assigned once in your codes, you can use it globally; after you assigned it a thing you cannot assign it to something
+//////when we require pg into the server.js, it's pulling it from our dependencies that we have installed using npm i; once it's installed then we can pull it directly from our node modules directory.  pg is a dependency in the package.json file.
+
+///////fs is a part of node cores; every time you run node, you don't have to grab fs from npm
+///////express comes from npm, our dependencies; express create function createApplication app.response app.request app.init return app;
+////json coming in as a string, not something we can manipulate so to manipulate it we use body-parser to parse stringified json into js objects
+/////anything coming in ajax request as json string
+
+/////port 3000 is set up in the terminal:  PORT=5000 node server while pg is running
+
+//////run the express function, making this a constructor function
 const pg = require('pg');
 const fs = require('fs');
 const express = require('express');
@@ -114,6 +126,8 @@ app.delete('/articles', (request, response) => {
 
 loadDB();
 
+///////send it for all routes
+///////if none of the routes have been hit when someone goes to slash anything it's just going to send file index.html
 app.get('/*', function(there, backAgain) {
   backAgain.sendFile('index.html', {root: './public'});
 });
