@@ -7,5 +7,4 @@ var app = app || {};
 
 page('/', app.articleController.index);
 page('/about', app.aboutController.index);
-page('/admin', app.Article.fetchAll(app.articleView.initAdminPage));
 page();
