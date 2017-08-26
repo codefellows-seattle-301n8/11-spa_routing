@@ -8,6 +8,6 @@ var app = app || {};
   aboutController.index = function() {
     $('section.tab-content').hide();
     $('section#about').fadeIn();
-};
+  };
   module.aboutController = aboutController;
 })(app);

@@ -8,8 +8,8 @@ var app = app || {};
   // Also be sure to hide all the main section elements, and reveal the #articles section:
   articleController.index = function() {
     app.Article.fetchAll(app.articleView.initIndexPage);
-      $('section.tab-content').hide();
-      $('section#articles').fadeIn();
-    };
+    $('section.tab-content').hide();
+    $('section#articles').fadeIn();
+  };
   module.articleController = articleController;
 })(app);
