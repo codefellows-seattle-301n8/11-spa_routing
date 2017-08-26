@@ -11,7 +11,6 @@ const conString = 'postgres://DaltonCarr:@localhost:5432/DaltonCarr';
 const client = new pg.Client(conString);
 client.connect();
 client.on('error', err => console.error(err));
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./public'));
