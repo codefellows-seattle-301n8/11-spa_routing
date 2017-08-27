@@ -19,7 +19,7 @@ const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
 const app = express();
 // const conString = 'postgres://USERNAME:PASSWORD@HOST:PORT';
-const conString = ''; // TODO: Don't forget to set your own conString
+const conString = 'postgres://hanhthaoluu@localhost:5432/kilovolt'; // TODO: Don't forget to set your own conString
 const client = new pg.Client(conString);
 client.connect();
 client.on('error', err => console.error(err));
@@ -127,7 +127,7 @@ app.delete('/articles', (request, response) => {
 loadDB();
 
 ///////send it for all routes
-///////if none of the routes have been hit when someone goes to slash anything it's just going to send file index.html
+///////if none of the routes have been hit when someone goes to slash anything it's just going to send file index.htm bc inside the index.html there is a script for page.js to load page.js to see if page.js has a route that matches this route
 app.get('/*', function(there, backAgain) {
   backAgain.sendFile('index.html', {root: './public'});
 });
