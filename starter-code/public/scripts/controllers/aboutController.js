@@ -5,11 +5,10 @@ var app = app || {};
   const aboutController = {};
 
   // TODO: Define a function that hides all main section elements, and then reveals just the #about section:
-  aboutController.index = function(){
-    console.log('hi');
+  aboutController.index = () => {
     $('#articles').hide();
-    $('#about').show();
-  }
+    $('#about, #about section').show();
+  };
 
   module.aboutController = aboutController;
 })(app);

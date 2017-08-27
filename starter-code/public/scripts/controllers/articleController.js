@@ -8,7 +8,7 @@ var app = app || {};
   // code that used to be in index.html.
   // Also be sure to hide all the main section elements, and reveal the #articles section:
 
-  articleController.index = function(){
+  articleController.index = () => {
   app.Article.fetchAll(app.articleView.initIndexPage);
 
   $('main section').hide();
