@@ -1,0 +1,23 @@
+{
+  "name": "11-spa_routing",
+  "version": "1.0.0",
+  "description": "![CF](https://i.imgur.com/7v5ASc8.png)  Lab 11 SPA Routing ======= [Code of Conduct](https://github.com/codefellows/code-of-conduct)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codefellows-seattle-301n8/11-spa_routing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codefellows-seattle-301n8/11-spa_routing/issues"
+  },
+  "homepage": "https://github.com/codefellows-seattle-301n8/11-spa_routing#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "page": "^1.7.1"
+  }
+}
