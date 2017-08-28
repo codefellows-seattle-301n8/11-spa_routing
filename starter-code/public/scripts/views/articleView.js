@@ -52,15 +52,6 @@ var app = app || {};
   /* TODO: Once the routes are handling '/' and '/about', we can delete
       this handleMainNav function. YESSSS! */
 
-  articleView.handleMainNav = function() {
-    $('.main-nav').on('click', '.tab', function() {
-      $('.tab-content').hide();
-      $(`#${$(this).data('content')}`).fadeIn();
-    });
-
-    $('.main-nav .tab:first').click();
-  };
-
   articleView.setTeasers = function() {
     $('.article-body *:nth-of-type(n+2)').hide();
     $('article').on('click', 'a.read-on', function(e) {
@@ -79,6 +70,7 @@ var app = app || {};
   };
 
   articleView.initIndexPage = () => {
+    console.log('hi, i am in the initIndexPage');
     $('#ajax-spinner').fadeOut();
     $('#filters').fadeIn();
     app.Article.all.forEach(article => {
@@ -94,11 +86,11 @@ var app = app || {};
     articleView.populateFilters();
     articleView.handleCategoryFilter();
     articleView.handleAuthorFilter();
-    articleView.handleMainNav();
+
     articleView.setTeasers();
     $('pre code').each((i, block) => hljs.highlightBlock(block));
   };
 
-  app.Article.fetchAll(articleView.initIndexPage);
+  //app.Article.fetchAll(articleView.initIndexPage);
   module.articleView = articleView;
 })(app);
