@@ -7,7 +7,7 @@ var app = app || {};
 
   const aboutController = {};
   aboutController.init = function() {
-    $("#articles").hide();
+    $("main > section").hide();
     $("#about").show();
   };
 

@@ -10,7 +10,7 @@ var app = app || {};
     app.Article.fetchAll(() => {
       app.articleView.initIndexPage();
     });
-    $('#about').hide();
+    $('main > section').hide();
     $('#articles').show();
   };
 
