@@ -70,6 +70,7 @@ var app = app || {};
   };
 
   articleView.initIndexPage = () => {
+    console.log('hi, i am in the initIndexPage');
     $('#ajax-spinner').fadeOut();
     $('#filters').fadeIn();
     app.Article.all.forEach(article => {
@@ -85,11 +86,11 @@ var app = app || {};
     articleView.populateFilters();
     articleView.handleCategoryFilter();
     articleView.handleAuthorFilter();
-    
+
     articleView.setTeasers();
     $('pre code').each((i, block) => hljs.highlightBlock(block));
   };
 
-  app.Article.fetchAll(articleView.initIndexPage);
+  //app.Article.fetchAll(articleView.initIndexPage);
   module.articleView = articleView;
 })(app);
