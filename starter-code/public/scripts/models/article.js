@@ -1,12 +1,66 @@
 'use strict';
 var app = app || {};
 
+console.log('hello');
+
+// var data = $.getJSON("/books")
+// var carroll = data.books.filter(function (book) {
+//     return book.author == "Lewis Carroll";
+// });
+// var pratchett = data.books.filter(function (book) {
+//     return book.author == "Terry Pratchett";
+// });
+// carroll.foreach(function (book) {
+//     $.ajax({ url: "/books/" + book.id;, type: "DELETE" });
+// });
+// pratchett.foreach(function (book) {
+//     $.ajax({
+//         url: "/books/" + book.id,
+//         type: "PUT",
+//         data: JSON.stringify(request),
+//         contentType: "application/json"
+//     });
+// });
+
+// var data = $.getJSON("/books").done(function (data) {
+//     var carroll = data.books.filter(function (book) {
+//         return book.author == "Lewis Carroll";
+//     });
+//     var pratchett = data.books.filter(function (book) {
+//         return book.author == "Terry Pratchett";
+//     });
+//     carroll.foreach(function (book) {
+//         $.ajax({ url: "/books/" + book.id;, type: "DELETE" });
+//     });
+//     pratchett.foreach(function (book) {
+//         $.post("/books/" + book.id, JSON.stringify(request));
+//     });
+// });
+
+
+$.getJSON("/books", function(data) {
+    data.books.forEach(function (book) {
+        var endpoint = "/books/" + book.id;
+        if (book.author == "Lewis Carroll") {
+            $.ajax({ url: endpoint, type: "DELETE" });
+        } else if (book.author == "Terry Pratchett") {
+            var request = {title: book.title.toUpperCase(), author: book.author};
+            $.ajax({
+                url: endpoint,
+                type: "PUT",
+                data: JSON.stringify(request),
+                contentType: "application/json"
+            });
+        }
+    });
+});
+
 (function(module) {
   function Article(rawDataObj) {
     Object.keys(rawDataObj).forEach(key => this[key] = rawDataObj[key]);
   }
 
-  Article.all = [];
+  Article.all = [3, 55, 999];
 
   Article.prototype.toHtml = function() {
     var template = Handlebars.compile($('#article-template').text());

@@ -6,6 +6,7 @@ var app = app || {};
 
   // TODO: Define a function that hides all main section elements, and then reveals just the #about section:
 
-
+  aboutController.getAboutMe = (function(){$('#articles').hide();$('#about').fadeIn();});
+  
   module.aboutController = aboutController;
 })(app);

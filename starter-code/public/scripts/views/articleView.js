@@ -52,7 +52,7 @@ var app = app || {};
   /* TODO: Once the routes are handling '/' and '/about', we can delete
       this handleMainNav function. YESSSS! */
 
-  articleView.handleMainNav = function() {
+    articleView.handleMainNav = function() {
     $('.main-nav').on('click', '.tab', function() {
       $('.tab-content').hide();
       $(`#${$(this).data('content')}`).fadeIn();
